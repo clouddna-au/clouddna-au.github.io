@@ -1,0 +1,18 @@
+title: Cloud Dna Blog
+description: Cloud Dna blog for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-slate
+
+permalink: /blog/:title.html
+
+url: https://clouddna-au.github.io
+source: githubpages
+paginate: 8
+paginate_path: /blog/page:num
+include:
+- _redirects
+
+plugins:
+- jekyll-paginate
+- jekyll-redirect-from
