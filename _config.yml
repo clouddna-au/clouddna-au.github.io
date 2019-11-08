@@ -6,12 +6,14 @@ theme: jekyll-theme-slate
 
 permalink: /blog/:title.html
 
-url: https://clouddna-au.github.io
+url: https://clouddna-au.github.io/blog
 source: githubpages
 paginate: 8
 paginate_path: /blog/page:num
 include:
 - _redirects
+
+redirect_to: https://clouddna-au.github.io/blog
 
 plugins:
 - jekyll-paginate
