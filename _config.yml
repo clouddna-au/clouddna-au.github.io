@@ -13,7 +13,7 @@ paginate_path: /blog/page:num
 include:
 - _redirects
 
-redirect_to: https://clouddna-au.github.io/blog
+baseurl: /blog/
 
 plugins:
 - jekyll-paginate
