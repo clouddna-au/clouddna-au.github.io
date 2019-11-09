@@ -1,9 +1,8 @@
 ---
 layout: blog
-title: Remove Resource group deployments
+title: 800 limit on Resource groups
 ---
 
-## 800 limit on Resource groups
 As quoted from Microsoft around [resource group limits](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits#resource-group-limits)
 > Maximum limit
 Resources per resource group, per resource type	**800**	Some resource types can exceed the 800 limit. See Resources not limited to 800 instances per resource group.
@@ -20,9 +19,13 @@ When you get to your limit, you receive the following error when trying to deplo
 ### 1. Enable Managed Identity
 
 Enable Managed Identity for Azure Function
+![Octocat](https://clouddna-au.github.io/assets/images/blog/2019-11-09/managedidentity.jpg)
 
-### 2. Add/Update the following files:
-#### profile.js
+### 2. Enable Service Principal access to managed resources IAM
+Navigate to Resource group and add in Access Control (IAM) the azure function app as contributor to the resource group. Select Function App in Find box and search for Function app name. Add Function app as contributor to Resource Group
+### 3. Add/Update the following files:
+#### profile.ps1
+`Profile.ps1` is needed as it provides the connection to use Azure AZ powershell modules. It authenticates the principal against Azure so any powershell cmdlets can be executed.
 
 ```powershell
 if ($env:MSI_SECRET -and (Get-Module -ListAvailable Az.Accounts)) {
