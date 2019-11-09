@@ -3,17 +3,38 @@ layout: blog
 title: Remove Resource group deployments
 ---
 
-It's been a long time coming, but `yeoman-generator` 1.0 is finally available!
+## 800 limit on Resource groups
+As quoted from Microsoft around [resource group limits](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits#resource-group-limits)
+> Maximum limit
+Resources per resource group, per resource type	**800**	Some resource types can exceed the 800 limit. See Resources not limited to 800 instances per resource group.
 
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
 
 ### Resource group deployments
 ![Deployments](https://clouddna-au.github.io/assets/images/blog/2019-11-09/deployments.jpg)
+
+When you get to your limit, you receive the following error when trying to deploy anything to the resource group:
+> Creating the deployment 'Your-Deployment-Name-Goes-Here' would exceed the quota of '800'
+
+
+## Steps to periodically remove deployments from the resource group
+### 1. Enable Managed Identity
+
+Enable Managed Identity for Azure Function
+
+### 2. Add/Update the following files:
+#### profile.js
+
+```powershell
+if ($env:MSI_SECRET -and (Get-Module -ListAvailable Az.Accounts)) {
+    Connect-AzAccount -Identity
+}
+```
+
+#### requirements.psd1
+
+```powershell
+@{
+    # For latest supported version, go to 'https://www.powershellgallery.com/packages/Az'. Uncomment the next line and replace the MAJOR_VERSION, e.g., 'Az' = '2.*'
+     'Az' = '2.*'
+}
+```
