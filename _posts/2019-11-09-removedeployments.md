@@ -15,5 +15,5 @@ var fun = function lang(l) {
 }
 ```
 
-
+### Resource group deployments
 ![Deployments](https://clouddna-au.github.io/assets/images/blog/2019-11-09/deployments.jpg)
