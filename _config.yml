@@ -4,9 +4,8 @@ show_downloads: true
 google_analytics:
 theme: jekyll-theme-slate
 
-permalink: /blog/:title.html
+permalink: /:title.html
 
-url: https://clouddna-au.github.io/blog
 source: githubpages
 paginate: 8
 paginate_path: /blog/page:num

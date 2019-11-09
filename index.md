@@ -1,5 +1,6 @@
 ---
 layout: default
+redirect_to: /blog/
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
