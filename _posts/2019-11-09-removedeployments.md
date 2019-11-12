@@ -4,7 +4,7 @@ title: 800 limit on Resource groups and a way around it
 ---
 
 Have you ever tried to deploy to a Microsoft Azure resource group but received the following error message
-> Creating the deployment 'Your-Deployment-Name-Goes-Here' would exceed the quota of '800'
+> <span style="color:red">Creating the deployment 'Your-Deployment-Name-Goes-Here' would exceed the quota of '800'</span>
 
 thats because there is a limit on the number of deployments that can be made to one resource group. According to Microsoft: [resource group limits](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits#resource-group-limits)
 > Maximum limit
