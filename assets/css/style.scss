@@ -1,15 +1,15 @@
----
----
+--- --- @import "jekyll-theme-slate";
 
-@import "jekyll-theme-slate";
-
+#header_wrap {
+    background-image: url(../images/blog_background.jpg);
+    background-repeat: no-repeat;
+    height: 190px;
+    background-size: cover;
+}
 
 .page-title {
     margin-top: 0;
-   
-  
     line-height: 1em;
-   
     font-weight: 400;
     text-transform: uppercase;
 }
