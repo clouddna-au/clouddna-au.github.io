@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Implement ILB ASE on Internet using App Gateway
+title: Sdd and Deploy to ILB ASE on Internet using App Gateway
 ---
 
 With Application Service Environments in Azure, there are two ways to deploy them. Either as a External ASE or as an Internal Load Balanced (ILB) ASE. FOr a customer I had to setup their ILB ASE as an environment hosting two Application Service plans on it. We had to also then introduce a Web Application Firewall (WAF) making use of Application Gateway and expose it onto the internet for public consumption.
